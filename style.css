@@ -1,106 +1,57 @@
-/* Базовый стиль страницы */
+/* Основные стили страницы */
 body {
-    margin: 0;
-    font-family: 'Calibri', sans-serif;
-    background-image: url(background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  margin: 0;
+  font-family: "Calibri", sans-serif;
+  line-height: 1.6; /* Улучшенный межстрочный интервал */
 }
 
-/* Навигационное меню */
+/* Стили шапки */
 header {
-    padding: 10px 5%;
-    background-color: white;
+  padding: 10px 5%;
+  background-color: white;
+  display: flex; /* Используем flex для лучшего управления элементами */
+  align-items: center;
+  justify-content: space-between;
 }
 
-header>* {
-    display: inline-block;
-    max-width: 450px;
+/* Стили навигации */
+nav a {
+  text-decoration: none;
+  color: black;
+  margin: 0 10px;
+  padding: 5px 10px;
+  transition: color 0.3s; /* Плавное изменение цвета */
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    margin: 0 10px;
+nav a:hover {
+  color: #555; /* Эффект при наведении */
 }
 
-/* Основной контент */
-.content {
-    padding: 20px 5%;
+/* Стили для разделов контента */
+.banner,
+.post {
+  text-align: center;
+  font-size: 30px;
+  padding: 40px 20px; /* Увеличенные отступы */
+  border: 2px solid #ddd;
+  margin: 20px auto; /* Центрирование и отступы */
+  max-width: 1200px; /* Ограничение ширины для читаемости */
 }
 
-.banner, .post {
-    background-color: white;
-    text-align: center;
-    font-size: 30px;
-    padding: 20px;
-    border: 2px solid #ddd;
-}
-
-.razryv {
-    height: 700px;
-    background: #f4f4f4;
-}
-
-/* Информационная секция */
-#info > div {
-    padding: 10px;
-    background-color: white;
-    text-align: center;
-    font-size: 24px;
-    border: 2px solid #000;
-    margin: 10px 0;
-}
-
-/* Подвал */
-footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-
-/* Адаптивность */
-@media screen and (max-width: 768px) {
-    header>* {
-        max-width: 100%;
-    }
-    
-    .content {
-        padding: 15px;
-    }
-    
-    .banner, .post {
-        padding: 15px;
-        font-size: 20px;
-    }
-}
-
-/* Дополнительные стили */
-.Date-Publication {
-    font-size: 14px;
-    color: #999;
-}
-
-#updates {
-    text-align: center;
-}
-
-#updates > p {
-    font-size: 180px;
-    line-height: 1.2;
-}
-
-#updates > h2 {
-    font-size: 24px;
-}
-
-.about-1 {
-    font-size: smaller;
-    color: #666;
-}
-
+/* Стили для изображений */
 img {
-    border-radius: 30px;
+  border-radius: 30px;
+  max-width: 100%; /* Адаптивность изображений */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Центрирование */
+}
+
+/* Стили подвала */
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px 0; /* Увеличенные отступы */
+  margin-top: 40px; /* Отступ от основного контента */
 }

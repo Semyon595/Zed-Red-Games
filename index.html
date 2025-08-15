@@ -1,35 +1,44 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
+<html lang="ru"> <!-- Добавлен язык документа -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Добавлен метатег для адаптивности -->
     <title>Zed Red Games</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-  <body>
+<body>
+    <!-- Шапка сайта с навигацией -->
     <header>
-      <a href="index.html"><h1>Zed Red Games</h1></a>
-      <div class="pustota"></div>
-      <nav>
-        <a href="#about">О нас</a>
-        <a href="#play">Играть</a>
-        <a href="#updates">Обновления</a>
-        <a href="#info">Информация</a>
-      </nav>
+        <a href="index.html"><h1>Zed Red Games</h1></a>
+        <div class="spacer"></div> <!-- Переименовано с pustota на spacer -->
+        <nav>
+            <a href="#about">О нас</a>
+            <a href="#play">Играть</a>
+            <a href="#updates">Обновления</a>
+            <a href="#info">Информация</a>
+        </nav>
     </header>
+
+    <!-- Основное содержимое страницы -->
     <main>
-      <article class="banner" id="about">
-        <h1>Zed Red Games</h1>
-        <p id="about-1">Мы команда разработчиков создающих игры</p>
-      </article>
-      <article class="post" id="play">
-        <h1>Наши игры</h1>
-        <img src="rof.png">
-        <h3>Realm of Darkness</h3>
-      </article>
+        <!-- Баннер "О нас" -->
+        <article class="banner" id="about">
+            <h1>Zed Red Games</h1>
+            <p>Мы команда разработчиков создающих игры</p> <!-- Убран избыточный id -->
+        </article>
+
+        <!-- Секция с играми -->
+        <article class="post" id="play">
+            <h1>Наши игры</h1>
+            <img src="rof.png" alt="Realm of Darkness"> <!-- Добавлен alt для доступности -->
+            <h3>Realm of Darkness</h3>
+        </article>
     </main>
+
+    <!-- Подвал сайта -->
     <footer id="info">
-      <p>© Все права принадлежат Zed Red Games</p>
+        <p>© Все права принадлежат Zed Red Games</p>
     </footer>
-  </body>
+</body>
 </html>
