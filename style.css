@@ -16,6 +16,7 @@ header {
 
 /* Стили навигации */
 nav a {
+  font-size: 20px;
   text-decoration: none;
   color: black;
   margin: 0 10px;
