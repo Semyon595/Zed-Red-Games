@@ -1,23 +1,20 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function () {
-  // Плавная прокрутка для якорных ссылок
+  // Плавная прокрутка
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const targetId = this.getAttribute("href");
-      if (targetId === "#") return;
-
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
         window.scrollTo({
-          top: targetElement.offsetTop - 80,
+          top: target.offsetTop - 80,
           behavior: "smooth",
         });
       }
     });
   });
 
-  // Анимация элементов при скролле
+  // Анимация при скролле
   const animateOnScroll = () => {
     document.querySelectorAll(".post, .banner").forEach((el) => {
       const rect = el.getBoundingClientRect();
@@ -36,5 +33,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   window.addEventListener("scroll", animateOnScroll);
-  animateOnScroll(); // Инициализация при загрузке
+  animateOnScroll();
+
+  // Параллакс эффект
+  window.addEventListener("scroll", function () {
+    document.body.style.backgroundPositionY = `${window.pageYOffset * 0.5}px`;
+  });
+
+  // Анимация соцсетей
+  document.querySelectorAll(".social-links a").forEach((link) => {
+    link.addEventListener("mouseover", () => {
+      link.style.transform = "scale(1.2)";
+    });
+    link.addEventListener("mouseout", () => {
+      link.style.transform = "scale(1)";
+    });
+  });
 });
