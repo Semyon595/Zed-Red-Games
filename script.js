@@ -164,20 +164,5 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", handleResponsive);
   handleResponsive();
 
-  // Анимация плавающего баннера
-  const banner = document.querySelector(".banner");
-  if (banner) {
-    banner.classList.add("floating");
-    const style = document.createElement("style");
-    style.textContent = `
-          @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-          }
-          .floating {
-            animation: float 6s ease-in-out infinite;
-          }
-        `;
-    document.head.appendChild(style);
-  }
+  document.head.appendChild(style);
 });
