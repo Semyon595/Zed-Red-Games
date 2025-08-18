@@ -108,8 +108,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     card.addEventListener("mouseleave", () => {
-      card.style.transform = "";
+      card.style.transform = "none";
       card.style.boxShadow = "";
+    });
+  });
+
+  document.querySelectorAll(".post img").forEach((img) => {
+    img.addEventListener("mouseenter", () => {
+      img.style.transform = "scale(1.05)";
+      img.style.boxShadow = "0 20px 40px rgba(0, 0, 0, 0.5)";
+    });
+
+    img.addEventListener("mouseleave", () => {
+      img.style.transform = "scale(1)";
+      img.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.3)";
     });
   });
 
@@ -131,12 +143,12 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".logo-link").forEach((link) => {
     link.addEventListener("mouseenter", () => {
       link.style.transform = "scale(1.05)";
-      link.style.transition = "0.5s";
-      link.style.background = "linear-gradient(to right, #38cadd, #e62ecd);"
+      link.style.transition = "transform 0.5s ease";
     });
 
     link.addEventListener("mouseleave", () => {
       link.style.transform = "";
+      link.style.background = "";
     });
   });
 

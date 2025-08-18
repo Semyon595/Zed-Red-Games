@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: default;
 }
 
 html {
@@ -35,7 +36,6 @@ body {
   color: var(--light-color);
   min-height: 100vh;
   overflow-x: hidden;
-  cursor: default;
 }
 
 header {
@@ -89,7 +89,6 @@ nav a {
   padding: 6px 12px;
   border-radius: 50px;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  cursor: pointer;
 }
 
 nav img {
@@ -176,7 +175,6 @@ footer p {
   width: 40px;
   height: 40px;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
 }
 
 .social-links img {
@@ -205,4 +203,12 @@ footer p {
   .banner p {
     font-size: 16px;
   }
+}
+
+.social-links a {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
