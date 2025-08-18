@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link.style.transform = "";
       img.style.transform = "";
       img.style.filter =
-        "brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.7))";
+        "brightness(0) invert(1) drop-shadow(0 0 0px rgba(255, 255, 255, 0.7))";
     });
   });
 
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("mouseenter", () => {
       link.style.transform = "scale(1.3) translateY(-5px)";
       img.style.opacity = "0";
-      img.style.transform = "rotate(-15deg)";
+      img.style.transform = "rotate(-90deg)";
       coloredImg.style.opacity = "1";
       coloredImg.style.transform = "rotate(0)";
     });
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
       img.style.opacity = "1";
       img.style.transform = "";
       coloredImg.style.opacity = "0";
-      coloredImg.style.transform = "rotate(15deg)";
+      coloredImg.style.transform = "rotate(90deg)";
     });
   });
 
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".banner, .post").forEach((card) => {
     card.addEventListener("mouseenter", () => {
       card.style.transform = card.classList.contains("banner")
-        ? "translateY(-8px)"
+        ? "translateY(0px)"
         : "scale(1.03)";
       card.style.boxShadow = "0 15px 35px rgba(0, 0, 0, 0.4)";
     });
@@ -118,11 +118,25 @@ document.addEventListener("DOMContentLoaded", function () {
     img.addEventListener("mouseenter", () => {
       img.style.transform = "scale(1.05)";
       img.style.boxShadow = "0 20px 40px rgba(0, 0, 0, 0.5)";
+      img.style.transition = "all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
     });
 
     img.addEventListener("mouseleave", () => {
       img.style.transform = "";
       img.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.3)";
+    });
+  });
+
+  // Анимация изображений в постах
+  document.querySelectorAll(".logo-link").forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      link.style.transform = "scale(1.05)";
+      link.style.transition = "0.5s";
+      link.style.background = "linear-gradient(to right, #38cadd, #e62ecd);"
+    });
+
+    link.addEventListener("mouseleave", () => {
+      link.style.transform = "";
     });
   });
 
@@ -151,21 +165,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("resize", handleResponsive);
   handleResponsive();
-
-  // Анимация плавающего баннера
-  const banner = document.querySelector(".banner");
-  if (banner) {
-    banner.classList.add("floating");
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-      }
-      .floating {
-        animation: float 8s ease-in-out infinite;
-      }
-    `;
-    document.head.appendChild(style);
-  }
 });
