@@ -56,6 +56,12 @@ header h1 {
 }
 
 /* Navigation styles */
+/* Стили для выравнивания иконок */
+
+nav img {
+  vertical-align: middle;
+}
+
 nav {
   display: flex;
   gap: 20px;
@@ -211,8 +217,24 @@ footer p {
   transition: color 0.3s ease;
 }
 
-.social-links a:hover {
-  color: var(--accent-color);
+.social-links a:hover.telegram {
+  color: #25a3e1;
+}
+
+.social-links a:hover.discord {
+  color: #9b84ee;
+}
+
+.social-links a:hover.youtube {
+  color: #ff4d4d;
+}
+
+.social-links a:hover.rutube {
+  color: #ff4d4d;
+}
+
+.social-links a:hover.tiktok {
+  color: #ff0050;
 }
 
 /* Animations */
@@ -250,4 +272,12 @@ footer p {
   .banner p {
     font-size: 1.2rem;
   }
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  text-decoration: none;
 }
